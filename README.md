@@ -35,7 +35,7 @@ M means - modified files
 	git add *
 	
 	
-### 4. Commiting Change
+### 4. commit
 
 -Initial Commit
 
@@ -51,7 +51,12 @@ M means - modified files
 
 	git commit -am "commit message"
 	
+If just use git commit the default editor configured will be opened and you can enter the commit message there.
+To add commit message in editor commit you change in the following way-
 
+	git add <files>
+	git commit
+	
 	
 ### 5. Check Difference
 
@@ -287,7 +292,28 @@ We will be using "meld" as a mergetool. Run the following commands to configure 
 
 
 
-### 23. 
+### 23. Removing files
+If you want to remove files from git track, you need to use git rm command. If you remove the file using shells rm command, then git will show untracked changes. So you need to use git rm command.
+
+	git rm <filename>
+	
+will remove the file from staging area as well as working directory in the next commit.
+
+
+But sometimes we might want to remove the file from staging area, and want to keep it in working directory. Then run the following command-
+
+	git rm --cached <filename>
+	
+
+
+### 24. Moving files
+Git does not keep track of moving files, i.e. git rm will be tracked as rename operation.
+
+	git rm file_from   file_to
+	
+
+
+
 
 
 
