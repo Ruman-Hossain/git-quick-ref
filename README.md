@@ -521,7 +521,34 @@ The better option to checking out to a tag is creating a separate branch-
 	
 	
 	
+### 28. Git Aliases
+We can shorten the git commands by creating git aliases in git config
+For example
 
+	git config --global alias.st status
+	
+Now if you run
+
+	git st
+	
+This will be equivalent to 
+
+	git status
+	
+	
+You can create alias for long commands to reduce typing -
+
+For example,
+
+	git config --global alias.unstage "reset HEAD --"
+	
+Now the bellow two commands will be equivalent-
+
+	#orignal long command
+	git reset HEAD -- file1.txt
+	
+	#shortened using alias
+	git unstage file1.txt
 
 
 
