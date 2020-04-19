@@ -71,23 +71,75 @@ This command will display what have been changed in the repository after the las
 
 ### 6. List All Commits [ git log ]
 
-	#this command will list all the commits with commit hash, author and summary
+a. this command will list all the commits with commit hash, author and summary
+	
 	git log
+
+-git log command supports the following parameters
+
+|Option | Description|
+----------|----------------
+-p | Show the patch introduced with each commit.
+--stat | Show statistics for files modified in each commit.
+--shortstat | Display only the changed/insertions/deletions line from the --stat command.
+--name-only | Show the list of files modified after the commit information.
+--name-status | Show the list of files affected with added/modified/deleted information as well.
+--abbrev-commit | Show only the first few characters of the SHA-1 checksum instead of all 40.
+--relative-date | Display the date in a relative format (for example, “2 weeks ago”) instead of
+using the full date format.
+--graph | Display an ASCII graph of the branch and merge history beside the log output.
+--pretty | Show commits in an alternate format. Options include oneline, short, full,
+fuller, and format (where you specify your own format).
+--oneline | Shorthand for --pretty=oneline --abbrev-commit used together.
 	
 	
-To view the differences introduced in each commit, we can run git log with the parameter called patch. We can also pass the number of patch we want to view-
+b. To view the differences introduced in each commit, we can run git log with the parameter called patch. We can also pass the number of patch we want to view-
 
 	git log -p -2
 	
-Another usefull parameter with git log is the --stat  parameter. It displayes the commit logs with a summary of how many lines were changes, how many lines inserted and how many lines removed. 
+c. Another usefull parameter with git log is the --stat  parameter. It displayes the commit logs with a summary of how many lines were changes, how many lines inserted and how many lines removed. 
 
 	git log --stat
 	
 	
+d. Another usefull parameter is --pretty. It can be used in two or more ways
 
+	git log --pretty=oneline
+	# this will list all the commits, one line for each commit
+
+
+e. --pretty=format: 
+
+	git log --pretty=format:"%h - %an, %ar - %s"
+	
+	supported paramter in format are-
+	
+|Option| Description of Output|
+|---------|-----------------------------|
+|%H| Commit hash|
+%h | Abbreviated commit hash
+%T | Tree hash
+%t | Abbreviated tree hash
+%P | Parent hashes
+%p | Abbreviated parent hashes
+%an | Author name
+%ae | Author email
+%ad | Author date (format respects the --date=option)
+%ar | Author date, relative
+%cn | Committer name
+%ce | Committer email
+%cd | Committer date
+%cr | Committer date, relative
+%s | Subject
+
+
+f. --graph
+
+	git log --pretty=format:"%h - %an" --graph
+	# the graph parameter displayes a nice ASCII graph of flow
 	
 	
-	
+g.	
 	
 	
 ### 7. View Details of a Commit [ git show ]
