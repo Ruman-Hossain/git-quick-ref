@@ -1,6 +1,6 @@
 # A Quick Reference to Git
 
-### 1. Initialize a git repo
+### 1. Initialize a git repo [ git init ]
 
 Inside the directory in which you want to initialize a repo-
 
@@ -8,7 +8,7 @@ Inside the directory in which you want to initialize a repo-
 	git init
 
 
-### 2. Check Status
+### 2. Check Status [ git status ]
 	git status
 	
 Will show all untracked file status
@@ -24,7 +24,7 @@ In the result-
 A means - files added to staging area
 M means - modified files
 
-### 3. Adding File/Files to Staging Area
+### 3. Adding File/Files to Staging Area [ git add ]
 
 -Adding by file name
 
@@ -35,7 +35,7 @@ M means - modified files
 	git add *
 	
 	
-### 4. commit
+### 4. commit [ git commit ]
 
 -Initial Commit
 
@@ -58,7 +58,7 @@ To add commit message in editor commit you change in the following way-
 	git commit
 	
 	
-### 5. Check Difference
+### 5. Check Difference [ git diff ]
 
 	#Difference between working directory and staging area
 	git diff
@@ -69,7 +69,7 @@ This command will display what have been changed in the repository after the las
 
 
 
-### 6. List All Commits
+### 6. List All Commits [ git log ]
 
 	#this command will list all the commits with commit hash, author and summary
 	git log
@@ -84,39 +84,45 @@ Another usefull parameter with git log is the --stat  parameter. It displayes th
 	git log --stat
 	
 	
-### 7. View Details of a Commit
+
+	
+	
+	
+	
+	
+### 7. View Details of a Commit [ git show ]
 
 	#in commit list by git log command there is a long value called the commit hash.
 	git show <hash value, at least 4 or 5 chars from the left side>
 	
 
-### 8. Move to a Specific Commit
+### 8. Move to a Specific Commit [git checkout]
 
 	git checkout hash_value [at least 4- 5 chars of the commit hash]
 	
 
-### 9. Move to the HEAD or the latest commit
+### 9. Move to the HEAD or the latest commit [git checkout]
 
 	git checkout master
 	
 	
-### 10. View Commit logs of a specific file
+### 10. View Commit logs of a specific file [git log]
 
 	git log file_name
 	
 	
-### 11. Move to a Commit of a specific file
+### 11. Move to a Commit of a specific file [git checkout]
 
 	git checkout hash_value  file_name
 	
 	
-### 12. Get back to HEAD after moving to a specific version of specific file
+### 12. Get back to HEAD after moving to a specific version of specific file [git checkout]
 
 	git checkout master -f
 	
 	
 	
-### 13. Reset a commit
+### 13. Reset a commit [git reset]
 After doing a commit mistakenly it can be reset and removed from the commit log. But once a commit is pushed, it should not be reseted. 
 -There are two reset
 1. soft reset - commit will be removed, but changes in files will still be there
@@ -128,7 +134,7 @@ After doing a commit mistakenly it can be reset and removed from the commit log.
 	git reset --hard
 	
 	
-### 14. Get back the commit after reset
+### 14. Get back the commit after reset [git reflog, git reset]
 After reset there will be no log in git log for that commit. So to get what have been done until then in that repository, run the bellow command
 
 	git reflog
@@ -144,7 +150,7 @@ use hard or soft based on the type of reset you want to recover from.
 
 
 
-### 15. Git Amend
+### 15. Git Amend [ git commit --amend]
 After doing one commit if you think that some other changes need to be commited in the same commit and you do not want to make another commit for that change, then yo can amend to the previous commit--
 
 	git add file_name
@@ -152,7 +158,7 @@ After doing one commit if you think that some other changes need to be commited 
 	
 	
 
-### 16. Git stash and clear
+### 16. Git stash and clear [git stash]
 If you want to create mutliple version of your experimental work but do not want to commit the experimental code, you can add the temporary version to the git stash area.
 
 -make initial commit with the template file or the starting code
@@ -179,7 +185,7 @@ git stash clear
 
 
 
-### 17. Git clean
+### 17. Git clean [git clean]
 Sometimes we need to create some helper files that are not part of the project. After one commit we need to remove those untracked files. 
 	
 -git clean -f -->this command will remove all the untracked files. But this command is risky, because untrcaked files onece deleted can ot be undone
@@ -200,7 +206,7 @@ above command will now delete the untracked files.
 
 
 
-### 18. Remote Repository
+### 18. Remote Repository [git push, git pull ]
 There are many remote repository services like github, bitbucket, getmeat.io, gitlab etc. you can also host your own remote repository in your intranet or internet server.
 
 -create a repo, copy the link
@@ -248,7 +254,7 @@ For example if we want to ignore all zip files, then we can add the following li
 	*.zip
 	
 	
-### 20. Cloning a repository
+### 20. Cloning a repository [git clone]
 -A remote repository can be cloned using different protocol. 
 -Copy the link of the repository
 
@@ -259,7 +265,7 @@ For example if we want to ignore all zip files, then we can add the following li
 	
 	
 
-### 21. Configure difftool
+### 21. Configure difftool [git difftool]
 So far we have checked the difference in between files using git diff command. But the difference was displayed in stdout in terminal. We can use a visual tool for comparing files. There are several tools available. 
 
 You can use the following command to check the available tools
@@ -289,7 +295,7 @@ Now we can see the difference by running the command
 But git diff will perform as usual even though difftool is configured.
 
 
-### 22. Configure mergetool
+### 22. Configure mergetool [git mergetool]
 If there is any merge conflict, then a visual tool will be very helpfull to resolve the conflict by comapring files.
 We will be using "meld" as a mergetool. Run the following commands to configure "meld" as  a mergetool
 
@@ -301,7 +307,7 @@ We will be using "meld" as a mergetool. Run the following commands to configure 
 
 
 
-### 23. Removing files
+### 23. Removing files [git rm]
 If you want to remove files from git track, you need to use git rm command. If you remove the file using shells rm command, then git will show untracked changes. So you need to use git rm command.
 
 	git rm <filename>
@@ -315,10 +321,10 @@ But sometimes we might want to remove the file from staging area, and want to ke
 	
 
 
-### 24. Moving files
+### 24. Moving files [git mv]
 Git does not keep track of moving files, i.e. git rm will be tracked as rename operation.
 
-	git rm file_from   file_to
+	git mv file_from   file_to
 	
 
 
