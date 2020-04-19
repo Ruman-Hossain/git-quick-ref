@@ -245,14 +245,49 @@ For example if we want to ignore all zip files, then we can add the following li
 	
 	
 
-### 21. 
+### 21. Configure difftool
+So far we have checked the difference in between files using git diff command. But the difference was displayed in stdout in terminal. We can use a visual tool for comparing files. There are several tools available. 
+
+You can use the following command to check the available tools
+
+	git difftool --tool-help
+	
+We will use "meld" as a visual difftool
+To install meld in ubuntu-
+
+	sudo apt-get update
+	sudo apt-get install meld
+
+First get the path of "meld" using the following command-
+
+	which meld
+	
+Now to configure "meld" as the difftool, run the following commands for configuration-
+
+	git config --global diff.tool meld
+	git config --global difftool.meld.path "/usr/bin/meld"
+	git config --global difftool.prompt false
+
+Now we can see the difference by running the command
+
+	git difftool
+	
+But git diff will perform as usual even though difftool is configured.
+
+
+### 22. Configure mergetool
+If there is any merge conflict, then a visual tool will be very helpfull to resolve the conflict by comapring files.
+We will be using "meld" as a mergetool. Run the following commands to configure "meld" as  a mergetool
+
+	git config --global merge.tool meld
+	git config --global mergetool.meld.path "/usr/bin/meld"
+	git config --global mergetool.prompt false
 
 
 
 
 
-
-
+### 23. 
 
 
 
