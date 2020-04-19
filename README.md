@@ -316,6 +316,15 @@ There are many remote repository services like github, bitbucket, getmeat.io, gi
 	git pull <remote name, mostly origin> <branch name, master or some other branch>
 
 
+-Renaming remote
+
+	git remote rename <old_name> <new_name>
+	
+-Removing remote
+
+	git remote remove <remote_name>
+	
+
 
 
 ### 19. .gitignore file
@@ -418,7 +427,165 @@ git reset is a dangoreous command, but running git reset without --hard or --sof
 
 
 
-### 26. 
+### 26. Unmodifying modified file
+Unmodifying simply means, you pulled a fresh copy or after doing a commit you have changes/updated some content of a file and now want to get back to the previous cleaned version upto last commit. you can do such by check out command.
+
+	git checkout -- <filename>
+	
+this command will get you back the clean file upto last commit.
+
+
+
+### 27. Tagging your project [git tag]
+Usually people tag their project upto a specific point as important, for examle, release version or some other points..
+
+-Listing tags: you can list all the existing tags simply by git tag with (-l or --list) optional parameters. 
+
+	git tag
+	
+-Filtering tags in list: you can filter or search for specific tags by adding wildcard or string by -l or --list parameter. For example, if you want to list all the tags with "1.5.8" then run-
+
+	git tag -l "1.5.8*"
+	
+-Two types of tagss: a) annotated tags   b) lightweighted tags
+
+-annotated tags: keeps every information.
+
+##### 27.1. Creating tag:
+
+	#annotated tag by -a parameter
+	git tag -a <tag_name>  -m "tag commit message"
+
+
+	#lightweigthed tag
+	git tag <tag name>
+	
+
+To view a tag information:
+
+	git show <tag name>
+	
+##### 27.2 Tagging later:
+If you have passed through your current commit and want to tag a previous commit as an important version. you can do so by providing the commit hash
+
+	git tag -a <tagname> <commit hash> -m "tag commit message"
+	
+	
+##### 27.3 Sharing tags:
+In normal push, tags are not shared to the remote repo. So, if you want to share the tags to remote, you need to push that tag explicitely as a branch to the remote..
+
+	#to push a single tag
+	git push <remote name> <tag name>
+	
+	e.g.
+	git push origin v1.0
+	
+	
+	#to push all the tags
+	git push <remote name> --tags
+	
+	e.g.
+	git push origin --tags
+	
+	
+##### 27.4 Deleting tags:
+To delete a tag, run
+	
+	git tag -d <tagname>
+	
+but the above command does not delete tag from remote repo. To delete tag from remote repo run
+
+	git push <remote name> --delete <tagname>
+	
+	e.g.
+	git push origin --delete v1.0
+	
+
+
+##### 27.5 Checking out a tag:
+You can get the verion of files as was in a specific tag version by simply checking out like a commit-
+
+	git checkout v1.0
+
+
+But this one detach the HEAD so has some ill sides.
+
+The better option to checking out to a tag is creating a separate branch-
+
+	git checkout -b <branch name> <tag name to checkout>
+	
+	
+	e.g. git checkout -b v1.1 v1.0
+	
+	# this will create and switch to the new branch v1.1
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
