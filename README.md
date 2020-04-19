@@ -409,8 +409,16 @@ Git does not keep track of moving files, i.e. git rm will be tracked as rename o
 	
 
 
+### 25. Unstaging file [ git reset ]
+After adding file to the staging area, if you think that the file is not for this commit or you just simply want to unstage the file from staging area, then run
+
+	git reset HEAD <filename>
+	
+git reset is a dangoreous command, but running git reset without --hard or --soft or any other paramter is not dangarous.
 
 
+
+### 26. 
 
 
 
