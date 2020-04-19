@@ -75,6 +75,15 @@ This command will display what have been changed in the repository after the las
 	git log
 	
 	
+To view the differences introduced in each commit, we can run git log with the parameter called patch. We can also pass the number of patch we want to view-
+
+	git log -p -2
+	
+Another usefull parameter with git log is the --stat  parameter. It displayes the commit logs with a summary of how many lines were changes, how many lines inserted and how many lines removed. 
+
+	git log --stat
+	
+	
 ### 7. View Details of a Commit
 
 	#in commit list by git log command there is a long value called the commit hash.
