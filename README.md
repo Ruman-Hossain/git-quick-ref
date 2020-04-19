@@ -85,11 +85,9 @@ a. this command will list all the commits with commit hash, author and summary
 --name-only | Show the list of files modified after the commit information.
 --name-status | Show the list of files affected with added/modified/deleted information as well.
 --abbrev-commit | Show only the first few characters of the SHA-1 checksum instead of all 40.
---relative-date | Display the date in a relative format (for example, “2 weeks ago”) instead of
-using the full date format.
+--relative-date | Display the date in a relative format (for example, “2 weeks ago”) instead of using the full date format.
 --graph | Display an ASCII graph of the branch and merge history beside the log output.
---pretty | Show commits in an alternate format. Options include oneline, short, full,
-fuller, and format (where you specify your own format).
+--pretty | Show commits in an alternate format. Options include oneline, short, full, fuller, and format (where you specify your own format).
 --oneline | Shorthand for --pretty=oneline --abbrev-commit used together.
 	
 	
@@ -139,8 +137,39 @@ f. --graph
 	# the graph parameter displayes a nice ASCII graph of flow
 	
 	
-g.	
+g. Limiting commit log display
+-we already have seen the -p -n paramter to limit the number of commit log to display. There are several more options. E.g. --since, --before etc. 
+
+	#to view commit logs or last 2 weeks
+	git log --since=2.weeks
 	
+	#this command accepts values like a specific data  "yyyy-mm-dd"
+	
+	or a relative data like "2 years 1 day 3 minutes ago"
+	
+	# can filter by the --author parameter
+	
+	# also can apply the --grep filter by passing a string that will be matched with commit message
+	
+	
+-Avaliable options for git log
+
+|Option | Description|
+----------|-----------------
+-< n > | Show only the last n commits
+--since, --after | Limit the commits to those made after the specified date.
+--until, --before | Limit the commits to those made before the specified date.
+--author | Only show commits in which the author entry matches the specified string.
+--committer | Only show commits in which the committer entry matches the specified string.
+--grep | Only show commits with a commit message containing the string
+-S | Only show commits adding or removing code matching the string
+
+
+For example,  
+
+	git log --pretty="%h - %s" --author='Junio C Hamano' --since="2008-10-01" \ --before="2008-11-01" --no-merges -- t/
+	
+
 	
 ### 7. View Details of a Commit [ git show ]
 
