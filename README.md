@@ -13,6 +13,16 @@ Inside the directory in which you want to initialize a repo-
 	
 Will show all untracked file status
 
+There is another option called short git status
+
+	git status -s
+	or
+	git status --short
+	
+In the result-
+?? means - Untracked files
+A means - files added to staging area
+M means - modified files
 
 ### 3. Adding File/Files to Staging Area
 
@@ -45,7 +55,10 @@ Will show all untracked file status
 	
 ### 5. Check Difference
 
+	#Difference between working directory and staging area
 	git diff
+	#Difference between stating area and last commit
+	git diff --staged
 	
 This command will display what have been changed in the repository after the last commit.
 
@@ -221,7 +234,18 @@ For example if we want to ignore all zip files, then we can add the following li
 	*.zip
 	
 	
-### 20. 
+### 20. Cloning a repository
+-A remote repository can be cloned using different protocol. 
+-Copy the link of the repository
+
+	#clone with the default repo name
+	git clone <repository_link>
+	#give the cloned repo a different name
+	git clone <repository_link>  <new name>
+	
+	
+
+### 21. 
 
 
 
