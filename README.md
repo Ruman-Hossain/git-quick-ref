@@ -4,20 +4,28 @@
 
 Inside the directory in which you want to initialize a repo-
 
-	
-	git init
-
+```bash	
+git init
+```
 
 ### 2. Check Status [ git status ]
-	git status
-	
+
+```bash
+git status
+```
+
 Will show all untracked file status
 
 There is another option called short git status
 
-	git status -s
-	or
-	git status --short
+```bash
+git status -s
+```
+
+or
+```bash
+git status --short
+```
 	
 In the result-
 ?? means - Untracked files
@@ -28,42 +36,54 @@ M means - modified files
 
 -Adding by file name
 
-	git add <filename1 filename2 ....  filenamen>
+```bash
+git add <filename1 filename2 ....  filenamen>
+```
 
 -Adding all files
 
-	git add *
-	
+```bash
+git add .
+```	
 	
 ### 4. commit [ git commit ]
 
 -Initial Commit
 
-	git add <filename ....>
-	git commit -m "commit message"
+```bash
+git add <filename ....>
+git commit -m "commit message"
+```
 	
 -Later commit
 --option 1: (by filename)
 
-	git commit -m "commit message" <filename>
+```bash
+git commit -m "commit message" <filename>
+```
 	
 --option 2: (commit all files)
 
-	git commit -am "commit message"
+```bash
+git commit -am "commit message"
+```
 	
 If just use git commit the default editor configured will be opened and you can enter the commit message there.
 To add commit message in editor commit you change in the following way-
 
-	git add <files>
-	git commit
-	
+```bash
+git add <files>
+git commit
+```	
 	
 ### 5. Check Difference [ git diff ]
 
-	#Difference between working directory and staging area
-	git diff
-	#Difference between stating area and last commit
-	git diff --staged
+```bash
+#Difference between working directory and staging area
+git diff
+#Difference between stating area and last commit
+git diff --staged
+```
 	
 This command will display what have been changed in the repository after the last commit.
 
@@ -72,8 +92,10 @@ This command will display what have been changed in the repository after the las
 ### 6. List All Commits [ git log ]
 
 a. this command will list all the commits with commit hash, author and summary
-	
-	git log
+
+```bash	
+git log
+```
 
 -git log command supports the following parameters
 
@@ -93,24 +115,30 @@ a. this command will list all the commits with commit hash, author and summary
 	
 b. To view the differences introduced in each commit, we can run git log with the parameter called patch. We can also pass the number of patch we want to view-
 
-	git log -p -2
+```bash
+git log -p -2
+```
 	
 c. Another usefull parameter with git log is the --stat  parameter. It displayes the commit logs with a summary of how many lines were changes, how many lines inserted and how many lines removed. 
 
-	git log --stat
-	
+```bash
+git log --stat
+```	
 	
 d. Another usefull parameter is --pretty. It can be used in two or more ways
 
-	git log --pretty=oneline
-	# this will list all the commits, one line for each commit
-
+```bash
+git log --pretty=oneline
+# this will list all the commits, one line for each commit
+```
 
 e. --pretty=format: 
 
-	git log --pretty=format:"%h - %an, %ar - %s"
+```bash
+git log --pretty=format:"%h - %an, %ar - %s"
+```
 	
-	supported paramter in format are-
+supported paramter in format are-
 	
 |Option| Description of Output|
 |---------|-----------------------------|
@@ -133,9 +161,10 @@ e. --pretty=format:
 
 f. --graph
 
-	git log --pretty=format:"%h - %an" --graph
-	# the graph parameter displayes a nice ASCII graph of flow
-	
+```bash
+git log --pretty=format:"%h - %an" --graph
+# the graph parameter displayes a nice ASCII graph of flow
+```	
 	
 g. Limiting commit log display
 -we already have seen the -p -n paramter to limit the number of commit log to display. There are several more options. E.g. --since, --before etc. 
@@ -552,7 +581,10 @@ Now the bellow two commands will be equivalent-
 
 
 
+### 29. Git Branch
+we can work on different ideas or features in different branches and it will not affect our master branch. There are several workflows people follows to maintain branches.
 
+#### 29.1 Creating branch
 
 
 
