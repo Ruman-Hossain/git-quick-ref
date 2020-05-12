@@ -585,8 +585,42 @@ Now the bellow two commands will be equivalent-
 we can work on different ideas or features in different branches and it will not affect our master branch. There are several workflows people follows to maintain branches.
 
 #### 29.1 Creating branch
+To create branch we just need to run the following command-
 
+```bash
+git branch <branch name>
+```
 
+#### 29.2 Switching to branches
+To swithch in between branches, the following command is used
+
+```bash
+git checkout <branch name>
+```
+
+#### 29.3 List all branches
+To list all the branches
+
+```bash
+git branch
+```
+
+#### 29.4 Delete a branch
+To delete a branch you need to type
+
+If the branch is not yet merged, it will give your option for merging.
+
+```bash
+git branch -d <branch name>
+```
+
+But if you do not want to merge or want to force the deletion of the branch, you need to use -D flag
+
+```bash
+git branch -D <branch name>
+```
+
+But command with -D is risky. Rather use -d for deletion.
 
 
 
