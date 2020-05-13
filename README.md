@@ -202,9 +202,10 @@ For example,
 	
 ### 7. View Details of a Commit [ git show ]
 
-	#in commit list by git log command there is a long value called the commit hash.
-	git show <hash value, at least 4 or 5 chars from the left side>
-	
+```bash
+#in commit list by git log command there is a long value called the commit hash.
+git show <hash value, at least 4 or 5 chars from the left side>
+```	
 
 ### 8. Move to a Specific Commit [git checkout]
 
