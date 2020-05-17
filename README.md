@@ -629,8 +629,25 @@ But command with -D is risky. Rather use -d for deletion.
 
 
 
+### 30. Git Remote
 
+#### 30.1 Adding remote
 
+```bash
+git remote add origin <url or the remote repo>
+```
+
+#### 30.2 Show remotes
+
+```bash
+git remote show origin
+```
+
+#### 30.3 Change existing remote url
+
+```bash
+git remote set-url origin <new.git.url/here>
+```
 
 
 
